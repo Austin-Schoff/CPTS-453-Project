@@ -10,6 +10,7 @@ class WeightedGraph:
         # Initialize a (x, y) coordinate for each vertex
         # This will be used to calcualte the distance
         self.coordinates = {}
+        random.seed(1)
         for node in range(1, num_nodes + 1):
             x = random.randint(0, 100)
             y = random.randint(0, 100)
