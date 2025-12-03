@@ -16,10 +16,9 @@ def randomWeightedComplete(numNodes):
             graph.add_edge(index, inner_index, weight)
 
     return graph
-"""
-Small test cases
-g = randomWeightedComplete(5)
-g.print_graph()
-print("Edges:", g.num_edges())
-"""
+
+# Small test cases
+#g = randomWeightedComplete(5)
+#g.print_graph()
+#print("Edges:", g.num_edges())
 
