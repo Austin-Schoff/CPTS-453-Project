@@ -61,10 +61,14 @@ def held_karp(n, dist):
     for i in range(n):
         for j in range(n):
             temp[i][j] = dist[i+1][j+1]
-    start = time.time()
-    results = hk_solve(temp)
-    end = time.time()
-    path = [x+1 for x in results[1]]
-    print("shortest path: " +str(path))
-    print("weight: " +str(results[0]))
-    print("execution time: " +str(end - start))
+    #start = time.time()
+    min_cost, zero_based_path = hk_solve(temp)
+    #end = time.time()
+    path = [x+1 for x in zero_based_path[1]]
+    #print("shortest path: " +str(path))
+    #print("weight: " +str(zero_based_path[0]))
+    #print("execution time: " +str(end - start))
+
+    return min_cost, path
+
+
