@@ -64,7 +64,7 @@ def held_karp(n, dist):
     #start = time.time()
     min_cost, zero_based_path = hk_solve(temp)
     #end = time.time()
-    path = [x+1 for x in zero_based_path[1]]
+    path = [x+1 for x in zero_based_path]
     #print("shortest path: " +str(path))
     #print("weight: " +str(zero_based_path[0]))
     #print("execution time: " +str(end - start))
