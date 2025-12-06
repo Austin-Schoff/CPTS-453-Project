@@ -161,3 +161,26 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+def nn_search(graph, start_nodes=10):
+    """
+    Wrapper for Nearest Neighbor implementation.
+    Returns (best_path, best_cost).
+    """
+    nodes = list(range(1, graph.num_nodes + 1))
+    best_cost = float("inf")
+    best_path = None
+
+    # Random selection of start nodes
+    start_nodes = min(start_nodes, len(nodes))
+    starts = random.sample(nodes, k=start_nodes)
+
+    for start in starts:
+        path = nearest_neighbor(graph, start)
+        cost = tour_cost(graph, path)      # <-- FIXED ORDER
+        if cost < best_cost:
+            best_cost = cost
+            best_path = path
+
+    return best_path, best_cost
